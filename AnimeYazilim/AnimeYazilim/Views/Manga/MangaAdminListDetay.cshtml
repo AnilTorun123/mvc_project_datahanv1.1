@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Concrete
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Manga>
+@{
+    ViewBag.Title = "MangaAdminListDetay";
+    Layout = "~/Views/Shared/_AnimeAdminLayout.cshtml";
+}
+
+<div class="section-title">
+    <h4>Manga Admin List</h4>
+</div>
+<br />
+
+
+<table class="table table-bordered" style="color: #ffffff;">
+    <tr>
+        <th><b>#</b></th>
+        <th><b>Adı</b></th>
+        <th><b>Resmi</b></th>
+        <th><b>Türü</b></th>
+        <th><b>Bölüm Sayısı</b></th>
+        <th><b>Hakkında</b></th>
+        <th><b>Açıklama</b></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.MangaID</th>
+            <td>@item.MangaName</td>
+            <td>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <img alt="Avatar" class="table-avatar" src="@item.MangaImage" width="45" height="45">
+                        @*<a>@item.AnimeName</a>*@
+                    </li>
+                </ul>
+            </td>
+            <td>@item.MangaDemographic</td>
+            <td>@item.MangaEpisode</td>
+            <td>@item.MangaAbout</td>
+            <td>@item.MangaText</td>
+
+
+        </tr>
+    }
+</table>
+
+<a href="/Manga/AddManga" class="btn btn-info">Yeni Manga</a>
+
+<br />
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("MangaAdminListDetay", new { page }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    { "page-link"}
+})

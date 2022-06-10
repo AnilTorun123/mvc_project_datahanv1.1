@@ -1,0 +1,7 @@
+>Bu alan projemin çeþitli yerlerinde notlar býraktýgým yerleri göstermesi için kullandýðým alan. Ýleride bunlarýn hepsini silmem gerek profesyonel olmaz neticede böyle kisisel sacma sapan notlarým ile :)
+
+--MessageManager'da
+
+--Login controller'da
+
+--animeepisodemanager

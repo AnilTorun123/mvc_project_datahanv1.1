@@ -1,0 +1,22 @@
+﻿@using EntityLayer.Concrete
+@model List<AnimeEpisode>
+@{
+    ViewBag.Title = "AnimeEpisodeList";
+    Layout = "~/Views/Shared/_AnimeLayout.cshtml";
+}
+
+<div class="section-title">
+    <h5>Bölümler</h5>
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="anime__details__episodes">               
+                <a href="@item.AnimeEp">@item.AnimeEpNum - @item.Anime.AnimeName</a>
+            </div>
+
+        </div>
+    </div>
+}

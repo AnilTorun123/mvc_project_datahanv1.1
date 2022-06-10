@@ -1,0 +1,24 @@
+﻿@model EntityLayer.Concrete.Skill
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+ <<h1>Yeni Yetenek Ekleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("AddSkill", "Skill", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Yetenek Adı")
+        @Html.TextBoxFor(x => x.SkillName, new { @class = "form-control" })
+        <br /><br />
+        @Html.Label("Yetenek Derecen")
+        @Html.TextBoxFor(x => x.Percent, new { @class = "form-control" })
+        <br /><br />
+        <button class="btn btn-primary">Kaydet</button>
+    </div>
+}
+
+

@@ -1,0 +1,14 @@
+//anime tarafý için layout þimdilik tamam.
+
+index için bir kaç örnek koydum. þimdi benim bir admin tarafý oluþturmam lazým orasý için.
+oluþturacaðým admin tarafýndan, anime ekleme iþlemleri gerçekleþtireceðim ve o örnekleri o eklediðim yerlere göre getireceðim
+
+RECENTLY ADDED SHOWS : mesala burasý için (tabi tüm ingilizceler türkçeleþtirilecek) anime yayýn tarihine göre en son eklenen x3 anime gelecek.
+
+POPULAR SHOWS : burasý için bir puanlama sistemi yapabilirim ve en yüksek 3 puanlý animeyi getiririm
+
+TRENDING NOW : burasýna karar vermedim
+
+LIVE ACTION : buda tür kategorisinde iste live-action olanlarý getirtirim.
+
+simdi o eklediðim alanda ne gerek bana: resmi, türü 1-2 (2 tane tür sekli yapmalýyým bunu entiyden ve databasede güncellerim ama orda önceden hazýrladýklarýma görede getirtebilirim.) ve ismi.

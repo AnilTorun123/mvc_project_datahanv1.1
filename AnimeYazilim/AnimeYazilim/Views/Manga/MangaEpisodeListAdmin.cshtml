@@ -1,0 +1,75 @@
+﻿@using EntityLayer.Concrete
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<MangaEpisode>
+@{
+    ViewBag.Title = "MangaEpisodeListAdmin";
+    Layout = "~/Views/Shared/_AnimeAdminLayout.cshtml";
+}
+
+<br />
+<table class="table table-bordered" style="color: #ffffff;">
+    <tr>
+        <th>#</th>
+        <th>Manga Adı</th>
+        <th>Manga Bölüm Sayısı</th>
+        <th>Manga Sayfa 1</th>
+        <th>Manga Sayfa 2</th>
+        <th>Manga Sayfa 3</th>
+        <th>Manga Sayfa 4</th>
+        <th>Manga Sayfa 5</th>
+        <th>Manga Sayfa 6</th>
+        <th>Manga Sayfa 7</th>
+        <th>Manga Sayfa 8</th>
+        <th>Manga Sayfa 9</th>
+        <th>Manga Sayfa 10</th>
+        <th>Manga Sayfa 11</th>
+        <th>Manga Sayfa 12</th>
+        <th>Manga Sayfa 13</th>
+        <th>Manga Sayfa 14</th>
+        <th>Manga Sayfa 15</th>
+        <th>Manga Sayfa 16</th>
+        <th>Manga Sayfa 17</th>
+        <th>Manga Sayfa 18</th>
+        <th>Manga Sayfa 19</th>
+        <th>Manga Sayfa 20</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MangaEpisodeID</td>
+            <td>@item.Manga.MangaName</td>
+            <td>@item.MangaEpNum</td>
+            <td>@item.MangaEpPage1</td>
+            <td>@item.MangaEpPage2</td>
+            <td>@item.MangaEpPage3</td>
+            <td>@item.MangaEpPage4</td>
+            <td>@item.MangaEpPage5</td>
+            <td>@item.MangaEpPage6</td>
+            <td>@item.MangaEpPage7</td>
+            <td>@item.MangaEpPage8</td>
+            <td>@item.MangaEpPage9</td>
+            <td>@item.MangaEpPage10</td>
+            <td>@item.MangaEpPage11</td>
+            <td>@item.MangaEpPage12</td>
+            <td>@item.MangaEpPage13</td>
+            <td>@item.MangaEpPage14</td>
+            <td>@item.MangaEpPage15</td>
+            <td>@item.MangaEpPage16</td>
+            <td>@item.MangaEpPage17</td>
+            <td>@item.MangaEpPage18</td>
+            <td>@item.MangaEpPage19</td>
+            <td>@item.MangaEpPage20</td>
+            <td><a href="/Manga/DeleteMangaEpisode/@item.MangaEpisodeID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Manga/EditMangaEpisode/@item.MangaEpisodeID" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("MangaEpisodeListAdmin", new { page }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    { "page-link"}
+})

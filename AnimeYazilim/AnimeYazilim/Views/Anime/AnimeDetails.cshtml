@@ -1,0 +1,292 @@
+﻿@model EntityLayer.Concrete.Anime
+
+@{
+    ViewBag.Title = "AnimeDetails";
+    Layout = "~/Views/Shared/_AnimeLayout.cshtml";
+}
+
+@using (Html.BeginForm("AnimeDetails", "Anime", FormMethod.Post))
+{
+<section class="anime-details spad">
+    <div class="container">
+        <div class="anime__details__content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="anime__details__pic set-bg" data-setbg="@Html.ValueFor(x=>x.AnimeImage)">
+
+                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="anime__details__text">
+                        <div class="anime__details__title">
+                            <h3>@Html.ValueFor(x => x.AnimeName)</h3>
+                            @*<span>フェイト／ステイナイト, Feito／sutei naito</span>*@
+                        </div>
+                        <div class="anime__details__rating">
+                            <div class="rating">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                            <span>1.029 Puanlanma</span>
+                        </div>
+                        <p>
+                            @Html.ValueFor(x => x.AnimeAbout)
+                        </p>
+                        <div class="anime__details__widget">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <ul>
+                                        <li><span>Tür:</span> @Html.ValueFor(x => x.AnimeDemographic)</li>
+                                        <li><span>Sütüdyo:</span> @Html.ValueFor(x => x.AnimeProducers)</li>
+                                        <li><span>Date aired:</span> @Html.ValueFor(x => x.AnimeDate)</li>
+                                        @*<li><span>Status:</span> @Html.ValueFor(x => x.AnimeStatus)</li>
+                                            <li><span>Bittimi:</span> @Html.ValueFor(x => x.AlreadyFinish)</li>*@
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <ul>
+                                        <li><span>Puan:</span> @Html.ValueFor(x => x.AnimeVote)</li>
+                                        <li><span>Bölüm Sayısı:</span> @Html.ValueFor(x => x.AnimeEpisode)</li>
+                                        @*<li><span>Duration:</span> </li>*@
+                                        <li><span>Kalite:</span> HD</li>
+                                        @*<li><span>Views:</span> 131,541</li>*@
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="anime__details__btn">
+                            <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Takip Et</a>
+
+                            <a href="/Anime/AnimeWatch/@Html.ValueFor(x=>x.AnimeID)" class="watch-btn">
+                                <span>Şimdi İzle</span> <i class="fa fa-angle-right"></i>
+                            </a>&nbsp
+
+                            <a href="/Anime/AnimeEpisodeList/@Html.ValueFor(x=>x.AnimeID)" class="watch-btn">
+                                <span>Bölümler</span> <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 col-md-8">
+                <div class="anime__details__review">
+                    <div class="section-title">
+                        <h5>Yorumlar</h5>
+                    </div>
+                    <div class="anime__review__item">
+                        <div class="anime__review__item__pic">
+                            <img src="img/anime/review-1.jpg" alt="">
+                        </div>
+                        <div class="anime__review__item__text">
+                            <h6>Chris Curry - <span>1 Hour ago</span></h6>
+                            <p>
+                                whachikan Just noticed that someone categorized this as belonging to the genre
+                                "demons" LOL
+                            </p>
+                        </div>
+                    </div>
+                    <div class="anime__review__item">
+                        <div class="anime__review__item__pic">
+                            <img src="img/anime/review-2.jpg" alt="">
+                        </div>
+                        <div class="anime__review__item__text">
+                            <h6>@Html.ValueFor(x => x.Writer.WriterName) - <span>5 Hour ago</span></h6>
+                            <p>asadada</p>
+                        </div>
+                    </div>
+                    <div class="anime__review__item">
+                        <div class="anime__review__item__pic">
+                            <img src="img/anime/review-3.jpg" alt="">
+                        </div>
+                        <div class="anime__review__item__text">
+                            <h6>Louis Tyler - <span>20 Hour ago</span></h6>
+                            <p>Where is the episode 15 ? Slow update! Tch</p>
+                        </div>
+                    </div>
+                    <div class="anime__review__item">
+                        <div class="anime__review__item__pic">
+                            <img src="img/anime/review-4.jpg" alt="">
+                        </div>
+                        <div class="anime__review__item__text">
+                            <h6>Chris Curry - <span>1 Hour ago</span></h6>
+                            <p>
+                                whachikan Just noticed that someone categorized this as belonging to the genre
+                                "demons" LOL
+                            </p>
+                        </div>
+                    </div>
+                    <div class="anime__review__item">
+                        <div class="anime__review__item__pic">
+                            <img src="img/anime/review-5.jpg" alt="">
+                        </div>
+                        <div class="anime__review__item__text">
+                            <h6>Lewis Mann - <span>5 Hour ago</span></h6>
+                            <p>Finally it came out ages ago</p>
+                        </div>
+                    </div>
+                    <div class="anime__review__item">
+                        <div class="anime__review__item__pic">
+                            <img src="img/anime/review-6.jpg" alt="">
+                        </div>
+                        <div class="anime__review__item__text">
+                            <h6>Louis Tyler - <span>20 Hour ago</span></h6>
+                            <p>Where is the episode 15 ? Slow update! Tch</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="anime__details__form">
+                    <div class="section-title">
+                        <h5>Yorum Yaz.</h5>
+                    </div>
+                    <form action="#">
+                        <textarea placeholder="Yorumun"></textarea>
+                        <button type="submit"><i class="fa fa-location-arrow"></i> Gönder</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="anime__details__sidebar">
+                    <div class="section-title">
+                        <h5>İLGİNİ ÇEKEBİLİR...</h5>
+                    </div>
+                    <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/tv-1.jpg">
+                        <div class="ep">18 / ?</div>
+                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                        <h5><a href="#">Boruto: Naruto next generations</a></h5>
+                    </div>
+                    <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/tv-2.jpg">
+                        <div class="ep">18 / ?</div>
+                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                        <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                    </div>
+                    <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/tv-3.jpg">
+                        <div class="ep">18 / ?</div>
+                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                        <h5><a href="#">Sword art online alicization war of underworld</a></h5>
+                    </div>
+                    <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/tv-4.jpg">
+                        <div class="ep">18 / ?</div>
+                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                        <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<table border="0" cellSpacing="0" cellPadding="0" width="100%" id="table1">
+
+        <tr>
+
+            <td vAlign="top" width="98%">
+                <center>
+
+                    <table border="0" id="table2">
+
+                        <tr>
+
+                            <td>
+                                <b>Bu sayfa hakkındaki yorumlar:</b>
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                    <center>
+                        <br>
+
+                        &nbsp;<form onsubmit="return wsx_ywait();" method="post" name="wsx_yuyelik" action="/Anime/AnimeDetails/1/">
+
+                            <table id="table3">
+
+                                <tr>
+
+                                    <td colSpan="20" align="left">
+                                        <b>
+                                            Bu sayfa hakkında yorum
+
+                                            ekle:
+                                        </b>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="left">
+                                        İsim
+
+                                    </td>
+
+                                    <td align="left">
+                                        <input size="25" name="isim">
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="left">
+                                        E-mail
+
+                                    </td>
+
+                                    <td align="left">
+
+                                        <input size="25" name="mail" AUTOCOMPLETE="OFF">
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>Mesajınız:</td>
+
+                                    <td>
+
+                                        <textarea style="WIDTH: 250px; HEIGHT: 100px" name="icerik" rows="1" cols="20"></textarea>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                            <input value="http://www.verdailesohbet.com//wsx_yorum_sonuc.html" type="hidden" name="page">
+
+                            <input value="verdailesohbet.com" type="hidden" name="domain">
+
+                            <input value="30842" type="hidden" name="id">
+
+                            <input value="0" type="hidden" name="alt_id">
+
+                            <input value="0" type="hidden" name="alt_id1">
+
+                            <input value="index.htm" type="hidden" name="dosya_ismi">
+
+                            <input value="Yorum ekle" type="submit">
+
+                        </form>
+
+                    </center>
+                </center>
+            </td>
+
+        </tr>
+
+    </table>*@
+
+</section>
+}

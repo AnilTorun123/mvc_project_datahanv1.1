@@ -1,0 +1,298 @@
+﻿@using EntityLayer.Concrete
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Anime>
+@{
+    ViewBag.Title = "IndexAdmin";
+    Layout = "~/Views/Shared/_AnimeAdminLayout.cshtml";
+}
+
+<section class="hero">
+    <div class="container">
+        <div class="hero__slider owl-carousel">
+            @*bu sliderlar arasına koyarım bir kaç tane sonra simdilik bir tanesi dursun (3 tane aynısını yaptım ileride iste bunu cesitlendiririm) ama bunu foreach ile almamam lazım çok sayıda olursa çirkin olur çünkü bir kaçtane öncelik şeklinde almam lazım. örnek niteliğinde*@
+
+            <div class="hero__items set-bg" data-setbg="/anime-main/img/hero/hero-1.jpg">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hero__text">
+                            <div class="label">Tür: Macera</div>
+                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
+                            <p>30 günlük dünya turunun ardından...</p>
+                            <a href="#"><span>Şimdi İzle</span> <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="/anime-main/img/hero/hero-1.jpg">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hero__text">
+                            <div class="label">Tür: Macera</div>
+                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
+                            <p>30 günlük dünya turunun ardından...</p>
+                            <a href="#"><span>Şimdi İzle</span> <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="/anime-main/img/hero/hero-1.jpg">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hero__text">
+                            <div class="label">Tür: Macera</div>
+                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
+                            <p>30 günlük dünya turunun ardından...</p>
+                            <a href="#"><span>Şimdi İzle</span> <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*slider bitiş alanım*@
+
+        </div>
+    </div>
+</section>
+
+<section class="product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="trending__product">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8">
+                            <div class="section-title">
+                                <h4>Trend Olanlar</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="btn__all">
+                                <a href="#" class="primary-btn">Hepsini Gör <span class="arrow_right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="@item.AnimeImage">
+                                        <div class="ep">18 / 18</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <ul>
+                                            <li>@item.AnimeDemographic</li>
+                                        </ul>
+                                        <h5><a href="/Anime/AnimeDetails/@item.AnimeID">@item.AnimeName</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+                @*<div class="popular__product">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <div class="section-title">
+                                    <h4>Popular Shows</h4>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="btn__all">
+                                    <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="/anime-main/img/popular/popular-1.jpg">
+                                        <div class="ep">18 / 18</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <ul>
+                                            <li>Active</li>
+                                            <li>Movie</li>
+                                        </ul>
+                                        <h5><a href="#">Sen to Chihiro no Kamikakushi</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="recent__product">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <div class="section-title">
+                                    <h4>Recently Added Shows</h4>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="btn__all">
+                                    <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="/anime-main/img/recent/recent-1.jpg">
+                                        <div class="ep">18 / 18</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <ul>
+                                            <li>Active</li>
+                                            <li>Movie</li>
+                                        </ul>
+                                        <h5><a href="#">Great Teacher Onizuka</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="live__product">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <div class="section-title">
+                                    <h4>Live Action</h4>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="btn__all">
+                                    <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="/anime-main/img/live/live-1.jpg">
+                                        <div class="ep">18 / 18</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <ul>
+                                            <li>Active</li>
+                                            <li>Movie</li>
+                                        </ul>
+                                        <h5><a href="#">Shouwa Genroku Rakugo Shinjuu</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>*@
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="product__sidebar">
+                    <div class="product__sidebar__view">
+                        <div class="section-title">
+                            <h5>En Çok İzlenenler</h5>
+                        </div>
+                        <ul class="filter__controls">
+                            <li class="active" data-filter="*">Gün</li>
+                            <li data-filter=".week">Hafta</li>
+                            <li data-filter=".month">Ay</li>
+                            <li data-filter=".years">Yıl</li>
+                        </ul>
+                        <div class="filter__gallery">
+                            <div class="product__sidebar__view__item set-bg mix day years"
+                                 data-setbg="/anime-main/img/sidebar/tv-1.jpg">
+                                <div class="ep">18 / ?</div>
+                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                <h5><a href="#">Boruto: Naruto next generations</a></h5>
+                            </div>
+                            <div class="product__sidebar__view__item set-bg mix month week"
+                                 data-setbg="/anime-main/img/sidebar/tv-2.jpg">
+                                <div class="ep">18 / ?</div>
+                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                            </div>
+                            <div class="product__sidebar__view__item set-bg mix week years"
+                                 data-setbg="img/sidebar/tv-3.jpg">
+                                <div class="ep">18 / ?</div>
+                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                <h5><a href="#">Sword art online alicization war of underworld</a></h5>
+                            </div>
+                            <div class="product__sidebar__view__item set-bg mix years month"
+                                 data-setbg="img/sidebar/tv-4.jpg">
+                                <div class="ep">18 / ?</div>
+                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
+                            </div>
+                            <div class="product__sidebar__view__item set-bg mix day"
+                                 data-setbg="img/sidebar/tv-5.jpg">
+                                <div class="ep">18 / ?</div>
+                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                <h5><a href="#">Fate stay night unlimited blade works</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product__sidebar__comment">
+                        <div class="section-title">
+                            <h5>New Comment</h5>
+                        </div>
+                        <div class="product__sidebar__comment__item">
+                            <div class="product__sidebar__comment__item__pic">
+                                <img src="img/sidebar/comment-1.jpg" alt="">
+                            </div>
+                            <div class="product__sidebar__comment__item__text">
+                                <ul>
+                                    <li>Active</li>
+                                    <li>Movie</li>
+                                </ul>
+                                <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                                <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</section>
+
+<br />
+<br />
+<br />
+<br />
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("IndexAdmin", new { page }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    { "page-link"}
+})
+
+
+
+@*su alttaki gibi yapmak istiyorum aslında pages i sonra buna bir bakacagım
+        <div class="product__pagination">
+        <a href="https://localhost:44319/Anime?page=1" class="current-page">1</a>
+        <a href="https://localhost:44319/Anime?page=2">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#"><i class="fa fa-angle-double-right"></i></a>
+    </div>*@
+
+@*////müzik*@
+
+<!-- SCM Music Player https://www.scmplayer.net -->
+<!--<script type="text/javascript" src="https://www.scmplayer.net/script.js"
+        data-config="{'skin':'skins/scmRed/skin.css','volume':50,'autoplay':true,'shuffle':true,'repeat':1,'placement':'top','showplaylist':false,'playlist':[{'title':'Bleach OST 3-Clavar La Espada','url':'https://www.youtube.com/watch?v=suwfJMiXauU'},{'title':'Bleach OST 3-Get Smart','url':'https://www.youtube.com/watch?v=aHaD6S2-5p0'},{'title':'Bleach OST 3-La distancia para un duelo','url':'https://www.youtube.com/watch?v=yMWnoJhBNF8&list=PLCAB00F36BAC3EBBE&index=2'},{'title':'Bleach OST 3-Fiesta De Guerra','url':'https://www.youtube.com/watch?v=WzxQeDWZMl0&list=PLCAB00F36BAC3EBBE&index=3'},{'title':'Bleach OST 3-Principio de lucha','url':'https://www.youtube.com/watch?v=aMBBf59VTHg&list=PLCAB00F36BAC3EBBE&index=4'},{'title':'Bleach OST 3-Batalla,Batalla.','url':'https://www.youtube.com/watch?v=eab7kgg8I3I&list=PLCAB00F36BAC3EBBE&index=5'},{'title':'Bleach OST 3-Nube Negra','url':'https://www.youtube.com/watch?v=SiJ-GRwTubo&list=PLCAB00F36BAC3EBBE&index=7'},{'title':'Bleach OST 3-Escalon','url':'https://www.youtube.com/watch?v=_G1EJ716AlQ&list=PLCAB00F36BAC3EBBE&index=8'},{'title':'Bleach OST - treachery','url':'https://www.youtube.com/watch?v=sxhlab2rCvg'},{'title':'Bleach OST - Invasion','url':'https://www.youtube.com/watch?v=PA6ZAlPcovg'},{'title':'Number One','url':'https://www.youtube.com/watch?v=XIBM7pe72os'},{'title':'One Piece OST - The Very Very Very Strongest [extended]','url':'https://www.youtube.com/watch?v=4J7K3yacig4'},{'title':'One Piece OST Overtaken','url':'https://www.youtube.com/watch?v=daFi4MScfl8'},{'title':'Naruto Soundtrack - Naruto Main Theme','url':'https://www.youtube.com/watch?v=HQ0kEKKRWzk&list=PLF7A13C44809B5893'},{'title':'Naruto Soundtrack - The Raising Fighting Spirit','url':'https://www.youtube.com/watch?v=sNjtroPFQ1s&list=PLF7A13C44809B5893&index=2'}]}"></script>-->
+<!-- SCM Music Player script end -->

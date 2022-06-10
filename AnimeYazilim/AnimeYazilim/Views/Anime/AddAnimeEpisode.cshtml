@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.AnimeEpisode
+@{
+    ViewBag.Title = "AddAnimeEpisode";
+    Layout = "~/Views/Shared/_AnimeAdminLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("AddAnimeEpisode", "Anime", FormMethod.Post))
+{
+<div class="form-group" style="color: #ffffff;">
+    <br />
+    <b>@Html.Label("Anime Adı: ")</b>
+    <br />
+    @Html.DropDownListFor(x => x.AnimeID, (List<SelectListItem>)ViewBag.vla, new { @class = "form-control" })
+    <br /><br />
+    <b> @Html.Label("Anime Sayısı: ")</b>
+    @Html.TextBoxFor(x => x.AnimeEpNum, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AnimeEpNum)
+    <br /> <br />
+    <b>@Html.Label("Anime Videosu: ")</b>
+    @Html.TextAreaFor(x => x.AnimeEp, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AnimeEp)
+    <br /><br />
+
+    <br /><br />
+    <button class="btn btn-info">Kaydet</button>
+
+</div>
+}

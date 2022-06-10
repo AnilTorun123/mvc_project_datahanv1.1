@@ -1,0 +1,26 @@
+﻿@using EntityLayer.Concrete
+@model List<Skill>
+@{
+    Layout = null;
+    //ViewBag.Title = "EditSkill";
+}
+
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<table class="table table-bordered">
+    <tr>
+        <th>Yetenek Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.SkillID</th>
+            <td>@item.SkillName</td>
+            <td><a href="/Skill/DeleteSkill/@item.SkillID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Skill/EditSkill/@item.SkillID" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+}
+</table>

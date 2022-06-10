@@ -1,0 +1,39 @@
+﻿@using EntityLayer.Concrete
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<AnimeEpisode>
+@{
+    ViewBag.Title = "AnimeEpisodeListAdmin";
+    Layout = "~/Views/Shared/_AnimeAdminLayout.cshtml";
+}
+
+
+<br />
+<table class="table table-bordered" style="color: #ffffff;">
+    <tr>
+        <th>#</th>
+        <th>Anime Adı</th>
+        <th>Anime Bölüm Sayısı</th>
+        <th>Anime Bölümü</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AnimeEpisodeID</td>
+            <td>@item.Anime.AnimeName</td>
+            <td>@item.AnimeEpNum</td>
+            <td>@item.AnimeEp</td>
+            <td><a href="/Anime/DeleteAnimeEpisode/@item.AnimeEpisodeID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Anime/EditAnimeEpisode/@item.AnimeEpisodeID" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("AnimeEpisodeListAdmin", new { page }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    { "page-link"}
+})
+

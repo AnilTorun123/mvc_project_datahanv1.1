@@ -1,0 +1,34 @@
+Yapýlmayý bekleyen ödevler: (Yaptýgým ödevleri alltaki listeden silmeyi unutma!)
+
+>mvc proje kapmpý 64: 4.41 // taslaklar kýsmý yapýlacak mesajlar için. Göndermediðimiz ama kaydettiðimiz mesajlarý görmemizi saðlýyacak orasý. Hýmm basit mesaj gönderme ile ayný yapýlacak sadece draft butonuna taslaklara actýgýmýz view linkini atýcagýz yani. gelen mesajlar bölümü ile ayný yapýda olacak içi.
+>mvc proje kapmpý 64: 5.30 // Bunu buraya yazmasý zor videodan izle ödevi hatýrlamak için. Hýmm bir kac fikrim var ama denemem lazým bu biraz zor arastýrmam gerekecek. (AYRICA BU ÖDEVÝ YAPTIKTAN SONRA YAPILAN ALANI YORUMA AL CÜNKÜ IYI BÝR SEY DEÐÝL PROJE ICIN, SADECE ODEV MAKSATLI BIR ODEV)
+
+
+mvc proje kapmpý 72: Hocanýn ödev listesi sertifika 3/4;
+1*Gelen kutusunda okundu okunmadý seçeneði
+2*Okunmamýþ mesaj sayýsý
+
+// 1 ve 2 yi zaten ödev olmasada yapacaktým simdi tüm su mesaj bölümünü halledeyim. // yapamadým ya herþey çok karýþtý. en azýndan viewlerini vs yaptým bir zarar teskil etmiyor dursun simdilik öyle sonra tekrar bakarým.
+
+
+3*Aktif-Pasif yap (hakkýmýzda kýsmý için) ** dip not: o alanda suan bir sýkýntý baþlamýs layout hizasýnda bir footerlýk alan kadar kýsým altta bosluk býrakýyor onu düzelt. olmayan hatalar bir anda olusuyor zaman ile kafayý yicem.
+4*Admin Bilgileri Hashleme
+
+5*Oturum Açma iþlemi mimariye taþýnsýn // simdi bir login controller ile view lazým ama mimariye tasýnsýn derken bunu business-entity katmanlarýnda vs yapmammý gerekecek? ne gerek varki ? bir seyi anlamadým burda. sonra döneceðim buna // o zaman hem yazar için hemde admin için login sitemi olacagýndan bunlarýnda katmanlarýný ayrýca yapmam gerekecek
+
+
+6*rolleme iþlemi mimariye taþýnsýn // buda üstteki ile ayný kapýya çýkýor benim için. 
+
+7*size ait bir yetenek kartý sayfasý: videonun açýklama linkindeki gibi bir yetenek kartý oluþturacagýz (sayfasýný * DÝNAMÝK OLUCAK STATÝK DEÐÝL) sonra UI da ss diye kloser acýp onun içine koyacaðýz
+>Githubdaki isim ile ayný olacak isim bölümü altýnada ünvanýmýz yazýlacak
+>alttaraftaki yetenek alaný tamamen veri tabanýndan çekilen dinamik alanlar olucak
+>10 tane yeteneðimizi kendimiz ölceklendireceðiz (ornegin sql, unity, mvc, .netcore, vs.vs.)
+>bu layout alanýna eklenecek ismi yetenek kartý olacak
+
+
+==Bitenler=
+3, 7, 
+
+
+----
+77. video : Ben Robot deðilim bölümü yapýlacak ödev olarak (writerlogin view kýsmýna)

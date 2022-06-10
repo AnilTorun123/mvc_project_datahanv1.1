@@ -1,0 +1,117 @@
+﻿@using EntityLayer.Concrete
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Manga>
+@{
+    ViewBag.Title = "IndexAdmin";
+    Layout = "~/Views/Shared/_AnimeAdminLayout.cshtml";
+}
+
+<section class="hero">
+    <div class="container">
+        <div class="hero__slider owl-carousel">
+            @*bu sliderlar arasına koyarım bir kaç tane sonra simdilik bir tanesi dursun (3 tane aynısını yaptım ileride iste bunu cesitlendiririm) ama bunu foreach ile almamam lazım çok sayıda olursa çirkin olur çünkü bir kaçtane öncelik şeklinde almam lazım. örnek niteliğinde*@
+
+            <div class="hero__items set-bg" data-setbg="/imagesExtra/One_Piece.png">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hero__text">
+                            <div class="label">Tür: Macera</div>
+                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
+                            <p>30 günlük dünya turunun ardından...</p>
+                            <a href="#"><span>Şimdi İzle</span> <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="/anime-main/img/hero/hero-1.jpg">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hero__text">
+                            <div class="label">Tür: Macera</div>
+                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
+                            <p>30 günlük dünya turunun ardından...</p>
+                            <a href="#"><span>Şimdi İzle</span> <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="/anime-main/img/hero/hero-1.jpg">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hero__text">
+                            <div class="label">Tür: Macera</div>
+                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
+                            <p>30 günlük dünya turunun ardından...</p>
+                            <a href="#"><span>Şimdi İzle</span> <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*slider bitiş alanım*@
+
+        </div>
+    </div>
+</section>
+
+<section class="product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="trending__product">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8">
+                            <div class="section-title">
+                                <h4>Trend Olanlar</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4">
+                            <div class="btn__all">
+                                <a href="#" class="primary-btn">Hepsini Gör <span class="arrow_right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="@item.MangaImage">
+                                        <div class="ep">18 / 18</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <ul>
+                                            <li>@item.MangaDemographic</li>
+                                        </ul>
+                                        <h5><a href="/Manga/MangaDetails/@item.MangaID">@item.MangaName</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</section>
+
+<br />
+<br />
+<br />
+<br />
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("IndexAdmin", new { page }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    { "page-link"}
+})
+

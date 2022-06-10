@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.Manga
+@{
+    ViewBag.Title = "AddManga";
+    Layout = "~/Views/Shared/_AnimeAdminLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("AddManga", "Manga", FormMethod.Post))
+{
+    <div class="form-group" style="color: #ffffff;">
+
+        <b> @Html.Label("Manga Adı: ")</b>
+        @Html.TextBoxFor(x => x.MangaName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MangaName)
+        <br /> <br />
+        <b>@Html.Label("Manga Hakkında: ")</b>
+        @Html.TextAreaFor(x => x.MangaAbout, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MangaAbout)
+        <br /><br />
+        <b>@Html.Label("Manga Resmi: ")</b>
+        @Html.TextBoxFor(x => x.MangaImage, new { @class = "form-control" })
+        <br /><br />
+        <b>@Html.Label("Manga Türü: ")</b>
+        @Html.TextBoxFor(x => x.MangaDemographic, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MangaDemographic)
+        <br /><br />
+        <b>@Html.Label("Bölüm Sayısı: ")</b>
+        @Html.TextBoxFor(x => x.MangaEpisode, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MangaEpisode)
+        <br /><br />
+        <b>@Html.Label("Manga text not alanım: ")</b>
+        @Html.TextAreaFor(x => x.MangaText, new { @class = "form-control" })
+        <br /><br />
+        <button class="btn btn-info">Kaydet</button>
+    </div>
+}

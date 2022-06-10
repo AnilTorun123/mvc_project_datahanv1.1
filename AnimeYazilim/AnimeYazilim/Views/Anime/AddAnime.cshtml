@@ -1,0 +1,56 @@
+﻿@model EntityLayer.Concrete.Anime
+@{
+    ViewBag.Title = "AddAnime";
+    Layout = "~/Views/Shared/_AnimeAdminLayout.cshtml";
+}
+
+
+<br />
+@using (Html.BeginForm("AddAnime", "Anime", FormMethod.Post))
+{
+    <div class="form-group" style="color: #ffffff;">
+
+        <b> @Html.Label("Anime Adı: ")</b>
+        @Html.TextBoxFor(x => x.AnimeName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AnimeName)
+        <br /> <br />
+        <b>@Html.Label("Anime Hakkında: ")</b>
+        @Html.TextAreaFor(x => x.AnimeAbout, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AnimeAbout)
+        <br /><br />
+        <b>@Html.Label("Anime Resmi: ")</b>
+        @Html.TextBoxFor(x => x.AnimeImage, new { @class = "form-control" })
+        <br /><br />
+        <b>@Html.Label("Tarih: ")</b>
+        @Html.TextAreaFor(x => x.AnimeDate, new { @class = "form-control" })
+        <br /><br />
+        <b>@Html.Label("Anime Türü: ")</b>
+        @Html.TextBoxFor(x => x.AnimeDemographic, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AnimeDemographic)
+        <br /><br />
+        <b>@Html.Label("Bölüm Sayısı: ")</b>
+        @Html.TextBoxFor(x => x.AnimeEpisode, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AnimeEpisode)
+        <br /><br />
+        <b>@Html.Label("Bittirdim mi?")</b>
+        @Html.TextAreaFor(x => x.AlreadyFinish, new { @class = "form-control" })
+        <br /><br />
+        <b>@Html.Label("Yayıncı: ")</b>
+        @Html.TextBoxFor(x => x.AnimeProducers, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AnimeProducers)
+        <br /><br />
+        <b>@Html.Label("Anime text not alanım: ")</b>
+        @Html.TextAreaFor(x => x.AnimeText, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(x => x.AnimeText)*@
+        <br /><br />
+        <b>@Html.Label("Anime Puanı: ")</b>
+        @Html.TextBoxFor(x => x.AnimeVote, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(x => x.AnimeVote)*@
+        <br /><br />
+        <b>@Html.Label("Anime Statüsü: ")</b>
+        @Html.TextBoxFor(x => x.AnimeStatus, new { @class = "form-control" })
+        <br /><br />
+        <button class="btn btn-info">Kaydet</button>
+    </div>
+}
+

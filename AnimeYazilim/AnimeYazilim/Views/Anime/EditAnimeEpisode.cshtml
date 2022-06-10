@@ -1,0 +1,27 @@
+﻿@model EntityLayer.Concrete.AnimeEpisode
+@{
+    ViewBag.Title = "EditAnimeEpisode";
+    Layout = "~/Views/Shared/_AnimeAdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("EditAnimeEpisode", "Anime", FormMethod.Post))
+{
+<div class="form-group" style="color: #ffffff;">
+    <b>@Html.Label("AnimeEpisode ID: ")</b>
+    <b>@Html.TextBoxFor(x => x.AnimeEpisodeID, new { @class = "form-control" })</b>
+    <br />
+    <b>@Html.Label("Anime bölüm sayısı: ")</b>
+    <b>@Html.TextBoxFor(x => x.AnimeEpNum, new { @class = "form-control" })</b>
+    <br />
+    <b>@Html.Label("Anime bölüm videosu: ")</b>
+    <b>@Html.TextBoxFor(x => x.AnimeEp, new { @class = "form-control" })</b>
+    <br />
+    <b>@Html.Label("Anime")</b>
+    <b>@Html.DropDownListFor(x => x.AnimeID, (List<SelectListItem>)ViewBag.vla, new { @class = "form-control" })</b>
+    <br />
+    <br />
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</div>
+}

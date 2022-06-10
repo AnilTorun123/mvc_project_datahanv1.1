@@ -1,0 +1,103 @@
+﻿@model EntityLayer.Concrete.MangaEpisode
+@{
+    ViewBag.Title = "EditMangaEpisode";
+    Layout = "~/Views/Shared/_AnimeAdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("EditMangaEpisode", "Manga", FormMethod.Post))
+{
+<div class="form-group" style="color: #ffffff;">
+    <b>@Html.Label("MangaEpisode ID: ")</b>
+    <b>@Html.TextBoxFor(x => x.MangaEpisodeID, new { @class = "form-control" })</b>
+    <br />
+    <b>@Html.Label("Manga bölüm sayısı: ")</b>
+    <b>@Html.TextBoxFor(x => x.MangaEpNum, new { @class = "form-control" })</b>
+    <br />
+    <b>@Html.Label("Manga Sayfa 1: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage1)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 2: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage2, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage2)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 3: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage3, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage3)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 4: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage4, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage4)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 5: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage5, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage5)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 6: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage6, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage6)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 7: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage7, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage7)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 8: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage8, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage8)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 9: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage9, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage9)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 10: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage10, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage10)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 11: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage11, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage11)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 12: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage12, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage12)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 13: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage13, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage13)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 14: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage14, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage14)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 15: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage15, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage15)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 16: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage16, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage16)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 17: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage17, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage17)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 18: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage18, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage18)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 19: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage19, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage19)
+    <br /><br />
+    <b>@Html.Label("Manga Sayfa 20: ")</b>
+    @Html.TextAreaFor(x => x.MangaEpPage20, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MangaEpPage20)
+    <br /><br />
+    <b>@Html.Label("Manga")</b>
+    <b>@Html.DropDownListFor(x => x.MangaID, (List<SelectListItem>)ViewBag.vla, new { @class = "form-control" })</b>
+    <br />
+    <br />
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</div>
+}

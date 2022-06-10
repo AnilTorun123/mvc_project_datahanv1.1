@@ -1,0 +1,54 @@
+﻿@using EntityLayer.Concrete
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Anime>
+@{
+    ViewBag.Title = "AnimeAdminList";
+    Layout = "~/Views/Shared/_AnimeAdminLayout.cshtml";
+}
+
+<div class="section-title">
+    <h4>AnimeAdminList</h4>
+</div>
+<br />
+
+
+<table class="table table-bordered" style="color: #ffffff;">
+    <tr>
+        <th><b>#</b></th>
+        <th><b>Anime Adı</b></th>
+        <th><b>Anime Resmi</b></th>
+        <th><b>Sil</b></th>
+        <th><b>Güncelle</b></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.AnimeID</th>
+            <td>@item.AnimeName</td>
+            <td>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <img alt="Avatar" class="table-avatar" src="@item.AnimeImage" width="45" height="45">
+                        @*<a>@item.AnimeName</a>*@
+                    </li>
+                </ul>
+            </td>
+            <td><a href="/Anime/DeleteAnime/@item.AnimeID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Anime/EditAnime/@item.AnimeID" class="btn btn-warning">Güncelle</a></td>
+
+
+        </tr>
+    }
+</table>
+
+<a href="/Anime/AddAnime" class="btn btn-info">Yeni Anime</a>
+<td><a href="/Anime/AnimeAdminListDetay" class="btn btn-outline-light">Detaylar</a></td>
+<a href="/Anime/AddAnimeEpisode" class="btn btn-info">Bölüm Ekle</a>
+<br />
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("AnimeAdminList", new { page }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    { "page-link"}
+})
